@@ -1,0 +1,59 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\author{David Cardozo}
+\title{Topics in Algebra}
+\newtheorem{define}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{claim}{Proposition}
+
+\begin{document}
+\maketitle
+
+These are few notes and compilation of exercises of the book \textit{Topics in Algebra.} by I. N. Herstein.
+\section{Preliminary notions}
+\subsection{Set Theory}
+Given a set $S$ we shall use the notation throughout $a \in S$ to read ``\emph{a is an element of S}''. The set $A$ will be said to be a \emph{subset} of $S$ if every element in $A$ is an element of $S$, We shall write $ A  \subset S$. Two sets $A$ and $B$ are equal, if both $ A  \subset B$ and $B \subset A$. A set $D$ will be called \emph{proper subset} of $S$ if $D \subset S$ but $ D \neq S$. The null set is the set having no elements; it is a subset of every set. Given a set $S$ we shall use the notation $A \left\lbrace a \in S \vert P(a)\right\rbrace $ to read `` $A$ is the set of all elements in $S$ for which the property $P$ holds.
+\begin{define}
+The \textbf{union} of the two sets $A$ and $B$, written as $A \cup B$, is the set $ \left\lbrace x \vert x \in A \text{ or } \in B \right\rbrace$
+\end{define}
+\textbf{Remark}  when we say that x is in A or x is in B, we mean x is in at least one of A or B, and may be in both.
+\begin{define}
+The \textbf{intersection} of the two sets $A$ and $B$, written as $ A \cap B$, is the set $ \left\lbrace x \vert x \in A \text{ and } x \in B \right\rbrace $
+
+Two sets are said to be \emph{disjoint} if their intersection is empty.
+\end{define}
+
+\begin{claim}
+For any three sets, $A,B,C$ we have
+\begin{align*}
+A \cap \left( B \cup C \right) = \left( A \cap B \right) \cup \left( A \cap C \right)
+\end{align*}
+\end{claim}
+\begin{proof}
+We will prove first $ \left( A \cap B \right) \cup \left( A \cap C \right) \subset A \cap \left( B \cup C \right) $. Observe $ B \subset B \cup C$, so that $ A \cap B \subset A \cap \left( B \cup C \right) $, in the same line of reasoning, $C \subset B \cap C$, so that $ A \cap C \subset A \cap \left( B \cap C \right) $, and we conclude $ \left( A \cap B \right) \cup \left( A \cap C \right) \subset \left( A \cap \left( B \cup C \right) \right) \cup \left( A \cap \left( B \cup C \right) \right) = A \cap \left( B \cup C \right) $.
+Now for the other direction, let $x \in A \cap (B \cup C)$, so that $x \in A$, and $x \in B \cup C$; suppose the former, and we have that $ x \in ( A \cap B ) $. The second possibility, namely, $x \in C$, implies that $x \in A \cap C $. Thus in either case, $ x \in  (A \cap C) \cup (A \cap B)  $, whence $ A \cap \left( B \cup C \right) \subset \left( A \cap B \right) \left( A \cap C \right)$.
+Combining the two concluding assertions, they give us the equality of both sets
+\end{proof}
+
+Given a set $T$, we say that $T$ serves as an \emph{index set} for the family $F = \left\langle A_{\alpha} \right\rbrace $ of sets if for every $ \alpha \in T$, there exist a set of $A_\alpha$ in the family $F$.
+By the iunion of the set $A_\alpha$, where $\alpha$ is in $T$, we mean the set $ \left\lbrace x \vert x \in A_\alpha \text{ for  at least one } \alpha \in T \right\rbrace$. We denote it by $ \cup_{\alpha \in T} A_{\alpha} $. Similarly, we denote the intersection of the sets $A_\alpha$ by $ \cap_{\alpha \in T} A_{\alpha} $. The sets $A_\alpha$ are mutually disjoint if for $ \alpha \neq \beta$, $ A_\alpha \cap A_\beta $ is the null set.
+\begin{define}
+Given the two sets A, B then the 
+\textbf{difference set}, $A - B$, is the set $ \left\lbrace x \in A \vert x \not\in N \right\rbrace$
+\end{define}
+\begin{claim}
+For any set $B$, the set $A$ satisfies  
+\begin{align*}
+A = ( A \cap B) \cup (A - B). 
+\end{align*}
+\end{claim}
+\begin{proof}
+Again, using the same strategy used before, we will show first $ (A \cap B) \cup (A - B) \subset A $, Observe that $A \cap B \subset A$, and $ A - B \subset A$ so that $ ( A \cap B ) \cup ( A - B ) \subset A $
+Now, for the converse, we want to see $ A  \subset (A \cap B)$, first observe that if we suppose that $x \in A$, then either $ x \in (A-B)$ or $x \in A \cap B$, so that in either case, eventually $x \in ((A \cap B) \cup (A - B) )$, so we conclude $ A  \subset (A \cap B) $. Finally, combining the concluding assertions we have $ A = (A \cap B) $ which proves our proposition.
+\end{proof}
+
+\end{document}
