@@ -58,7 +58,94 @@ Now, for the converse, we want to see $ A  \subset (A \cap B)$, first observe th
 
 Observe $B \cap (A - B) $ is the null set. Observe than when $ B \subset A $, we call $A-B$ the complement of $B$ in $A$.
 
+\begin{define}
+	The binary relation $ \sim $ on $ A $ is said to be an \emph{equivalence relation} on $A$ if for all $a,b,c$ in $A$
+	\begin{itemize}
+		\item $a \sim a$ 
+		\item $a \sim b $ implies $ b \sim a $ 
+		\item $ a \sim b $ and $ b \sim c$ imply $a \sim c$
+	\end{itemize}
+	The first of these properties is called reflexivity, the second, symmetry, and the third, transitivity
+\end{define}
 
+\begin{define}
+	If $A$ is a set and if $\sim$ is an equivalence relation on $A$, then the equivalence class of $a \in A$ is the set $ \left\lbrace x \in A \vert a \sim x \right\rbrace.$ We write it as cl(a).
+\end{define}
 
+Now it comes the first big result.
+\begin{thm}
+	The distinct equivalence classes of an equivalence relation on $A$ provide us with a decomposition of $A$ as a union of mutually disjoint subsets. Conversely, given a decomposition of $A$ as a union of mutually disjoint, nonempty subsets, we can define an equivalence relation on $A$ for which these subsets are the distinct equivalence classes.
+\end{thm}
 
+\begin{proof}
+	Let the equivalence relation on $A$ denoted by $ \sim $. Observe first that $ a \sim s$, so that $ a \in $ cl($a$), whence the union of all cl($a$)'s is all of $A$. We will now prove that two equivalence classes are either equal or disjoint, so suppose for the contrary that two distinct classes cl(a) and cl(b) their intersection is nonempty; then there exist an element $ x \in $ cl(a) and $ x \in $ cl(b), that is, $ x \sim a$ and $ x \sim b$, and by transitivity property of the equivalence relationship, we have $ a \sim b$, now let $ y \in $ cl(b); thus we have $ b \sim y$. But, from $ a \sim b$, and $ b \sim y$, we have then $ a \sim y$, so that, $ y \in $ cl(a), and we conclude cl(b) $ \subset$ cl(a), we observe also that the argument for $ y \in $ cl(a) is symmetric, so that cl(a) $ \subset$ cl(b), and we have the contradiction that we took two distinct classes, but cl(a) $=$ cl(b). We conclude then that the distinct cl(a)'s are mutually disjoint and their union is $A$. Now for the other part of the theorem. \par
+	Suppose that $ A = \cup A_{\alpha} $, where the $a_{\alpha} $ are mutually disjoint, nonempty sets. We define an equivalence relation $ \sim $ as: given $a \in A$ (since $a$ is in exactly one of the $A_{\alpha}$ ), we define $a \sim b$ if and only if $a$ and $b$ are in the same $A_{\alpha}$, we need to check if $ \sim $ is an equivalence relation. First, observe $ a \sim a$ since, again $a$ is in exactly one of the $A_{\alpha}$. Second, suppose $ a \sim b$, that is $a,b \in A_{\alpha}$ for some unique $ \alpha $, which is the same as $ b \sim a$. Finally, suppose $a \sim b$, and $ b \sim c$ so that $a,b,c \in A{\alpha}$ for some unique $\alpha$, and we can see that $a \sim c$. \par 
+	Finally, let us observe that for any $a \in A$, cl(a) is a subset of $A$, so that cl(a) $\subset$ A, and $\bigcup_{\alpha \in A} cl(a) \subset A$; and let for $b \in A$, there exist a unique set cl(b) up to equivalence classes, so that $ A \subset \bigcup_{\alpha \in A} cl(\alpha) $ 
+\end{proof}
+\subsection{Problems of Set Theory}
+\textbf{5.} For a finite set $C$ let $ \vert C \vert$ indicate the number of elements in $C$. If $A$ and $B$ are finite sets prove $ \vert A \cup B \vert = \vert A \vert + \vert B \vert - \vert A \cap B \vert $ \par
+\textbf{Solution}
+Suppose $A$ and $B$ are finite sets, so that there exist $n,m \in \mathbb{N}$ for which $ \vert A \vert = n$, and $ \vert B \vert = m$. Let us remark that if $D, C$ are finite set which are disjoint, $ \vert D \cup C \vert $ is $ \vert D \vert + \vert C \vert $. Given this two facts, observe $ A \cup B = (A - (A \cap B)) \cup B$, and $ A - (A \cap B) \cap B = \emptyset $, so that $ \vert A \cup B \vert = \vert A \vert - \vert A \cap B \vert + \vert B \vert $. \par
+\textbf{6.} If $A$ is a finite set having $n$ elements, prove that $A$ has exactly $ 2^{n} $ distinct subsets. \par 
+\textbf{Solution}
+The proof is by induction. First, observe that if a set $A$ has one element, the subset of $A$ are $ \left\lbrace \emptyset, A \right\rbrace $ which has $ 2^{1} $ elements, so that the assertion is true for $ n = 1 $, now suppose that if a set $A$ has $n$ elements, then there are exactly $2^{n}$ distinct subsets. Now consider the set with $n+1$ elements given by $ \left\lbrace a \right\rbrace \cup A $, with $ a \not\in A $. So that the subsets of $ \left\lbrace a \right\rbrace \cup A $ are given by first taking the subsets of $A$, which we know have $2^{n}$ elements, and then taking a copy of these subset and adding the element $ a $, so that there exist:
+\begin{align*}
+2^n + 2^n =2^n (1 + 1) =2^n2 = 2^{n+1}
+\end{align*} 
+so that for a set with $n+1$ element, there are exactly $ 2^{n+1} $ subsets. Then, by the principle of mathematical induction, we have shown that If $A$ is a finite set having $n$ elements, prove that $A$ has exactly $ 2^{n} $ distinct subsets. \par
+\textbf{10} Let $S$ be a set and let $S^*$ be the set whose elements are the various subsets of $S$. In $S^*$ we define an addition and multiplication as follows: If $A,B \in S^*$:
+\begin{itemize}
+	\item $ A + B = (A-B) \cup (B-A)$
+	\item $ A \cdot B = A \cap B $
+\end{itemize}
+Prove the following laws: \par 
+\begin{align*}
+(A + B) + C = A + (B + C)
+\end{align*}
+\textbf{Proof} Observe that  $ x \in A + B$ if and only if, $ x \not\in A \cap B $, so that $ x \in ((A+B) + C) $ if and only if $ x \not\in (A+B) \cap C$, or in other words, $ x \not\in (A \cap B \cap C)$, which by the property that $\cap$ is associative, we have then $ x \in (A + (B+C)) $. So we conclude then $ (A + B) + C = A + (B + C) $.
+\begin{align*}
+A \cdot (B + C) = A \cdot B + A \cdot C
+\end{align*}
+\textbf{Proof} Observe:
+\begin{align*}
+	 A \cdot B + A \cdot C = A \cap B + A \cap C \\
+	 A \cap B + A \cap C = (A \cap B - A \cap C) \cup (A \cap C - A \cap B) \\
+	 (A \cap B - A \cap C) \cup (A \cap C - A \cap B)  = A \cap (B-C) \cup A \cap (C-B) \\
+	 A \cap (B-C) \cup A \cap (C-B) = A \cap ((B-C) \cup (C-B)) \\
+	 A \cap (B-C) \cup A \cap (C-B) = A \cdot (B+C)
+\end{align*} 
+\par
+\begin{align*}
+A \cdot A = A
+\end{align*}
+\textbf{Proof}
+By definition. $A \cdot A = A \cap A = A $
+\par
+\begin{align*}
+A + A = \emptyset
+\end{align*}
+\textbf{Proof}
+By definition. $A+A = (A - A) \cup (A - A) = \emptyset \cup \emptyset = \emptyset$
+\par 
+If $ A + B = A + C$, then $ B = C$
+\textbf{Proof}
+Suppose is false that $B = C $, without loss of generalization, say that  $x \in B$, but $ x \not\in C$. So two cases can happen:
+\begin{itemize}
+	\item[i)] if $x \in A + B$, observe that $ x \not\in A$. Note that $x \in A + B $ is equivalent to $ x \in A + C$, so that $ x \in C$. A contradiction.
+	\item[ii)] if $x \not\in A + B$, we have that $x \not\in A + C$, so that $ x \in A \cap C$, which implies again $ x \in C$. A contradiction.
+\end{itemize}
+We conclude then, if $ A + B = A + C$, then $ B = C$.
+(The system just described is an example of a\textit{ Boolean Algebra}.)
+\textbf{12.} Let $S$ be the set of all integers an let $ n >1$ be a fixed integer. Define for $a,b \in S$, $a \sim b$ if $ a - b$ is a multiple of $n$. 
+\begin{claim}
+	$\sim$ is an equivalence relation
+\end{claim}
+\textbf{Proof}
+First, observe that $ a \sim a$ since $ a - a = 0$ ad $0 \cdot n = 0$, second, suppose $ a \sim b$, or in other words, $ kn = a -b$ for some integer $k$, observe $ -kn = b - a$, and we have then $ b \sim a$. Finally, suppose $ a \sim b$ and $b \sim c$, more explicitly, $kn = a -b$ and $gn = b -c$ for some integers $k$ and $g$, take note that $kn + gn = (k +g)n = a -c$, so that $ a \sim c$. \par 
+\begin{claim}
+	There are exactly $n$ distinct classes
+\end{claim}
+\textbf{Proof}
+
+	
 \end{document}
