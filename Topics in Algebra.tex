@@ -146,6 +146,14 @@ First, observe that $ a \sim a$ since $ a - a = 0$ ad $0 \cdot n = 0$, second, s
 	There are exactly $n$ distinct classes
 \end{claim}
 \textbf{Proof}
+Let cl(0), ...,cl(n-1), be the $n$ different equivalence classes, defined by $ \sim $ as above, observe that for an integer $ x \geq n $, cl(x) is: $ \left\lbrace m \in \mathbb{Z} \vert x \sim m \right\rbrace $, note that  if $ x \geq n $ is equivalent to say that, there exist integers  $ E = {0,1,...} $ and $K = {0,...,n-1} $ such that $ x = En + K $. Since $ x \sim m $, $ En + K \sim m$, which by definition is: there exist an integer $R$ for which $ Rn= (En + K) - m$, or $ (R - E)n = K - m $, so that $ K \sim m$, and since $K = {0,...,n-1}$, w have shown for $ x \geq n $, $x$ is in the any of the equivalence classes of cl(0), cl(1), \ldots cl($n-1$).
+\subsection{Mappings}
+We introduce the concept of a mapping of one set into another. Informally, a mapping from one set, $S$, into another, $T$, is a ruler that associates with each element in $S$ a \emph{unique} element $t$ in $T$.
+\begin{define}
+	If $S$ and $T$ are nonempty sets, then a \textbf{mapping} from S to T is a subset, M, of $ S \times T$ such that for every $ s \in S$ there is a unique $t \in T$ such that the ordered pair $ (s,t)$ is in M.	
+\end{define}
+Alternatively and for pedagogical reasons, we think of a mapping as a rule that associates any element $s \in S$ some element $ t \in T$. We shall say that $t$ is the image of $s$ under the mapping.
+\textbf{Notation Remarks} Let $ \sigma $ be a mapping from $S$ to $T$; we denote this by writing $\sigma : S \rightarrow T$ or $ S \xrightarrow{\sigma} T$, strangely enough, if $t$ is the image of $s$ under $\sigma$ we shall represent this fact by $ t = s\sigma $. Algebraists often write mappings on the right. 
 
 	
 \end{document}
