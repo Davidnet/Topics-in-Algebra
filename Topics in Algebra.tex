@@ -228,7 +228,7 @@ We state the following theorem as the recollection of th previous lemma and resu
 	\begin{itemize}
 		\item Given by Proposition \ref{pro:propertystillcomposition}
 		\item Given by Proposition \ref{pro:Associativelawmaps}
-		\item Given by Proposition \ref{pro:existenceofonetoonecorrespondence}
+		\it	em Given by Proposition \ref{pro:existenceofonetoonecorrespondence}
 		\item Given by Proposition \ref{pro:existenceofonetoonecorrespondence}
 	\end{itemize}
 \end{proof}
@@ -236,5 +236,30 @@ We state the following theorem as the recollection of th previous lemma and resu
 \begin{claim}
 	If $S$ has more than two elements we can find two elements $\sigma, \tau$ in $A(S)$ such that $ \sigma \circ \tau \neq \tau \circ \sigma$.
 \end{claim}
-	
+
+\begin{proof}
+	Consider $U$ subset of $S$, with $S$ having more than three elements, let us also suppose that the cardinality of $U$ is $3$. Define $T$ as the complement of U with respect to S, that is, $T = S - U$. Now consider $F$ the set of all one-to-one mappings and onto functions on $S$ that fix $T$, i.e if $f \in F$ then $f(t) = t $ for all $t \in T$. Observe then that all functions on $F$ are uniquely determined by the values of $f \vert_{U} : S \rightarrow S$. Let us rename the elements of $U$ with $x_1,x_2,x_3$, define the mapping $\sigma \in F$ by $\sigma: S \rightarrow S$ by $x_1 \sigma = x_2$, $x_2 \sigma = x_3$, $x_3 \sigma = x_1$, and the rest is determined already since $ \sigma \in F$. Define the mapping $ \tau: S \rightarrow S$, and $ \tau \in F$ by $x_2 \tau = x_3$, $x_3\tau = x_2$ and $ x_1 \tau = x_1$. Take note, $x_1(\sigma \circ \tau) = x_3$ but that  $ x_1(\tau \circ \sigma) = x_2 \neq x_3$. Thus $ \sigma \circ \tau \neq \tau \circ \sigma$ 
+\end{proof}
+
+\subsection{Problems of Mappings}
+\textbf{2} If $S$ and $T$ are nonempty sets, prove that there exists a correspondence between $ S \times T$ and $ T \times S$
+
+
+\textbf{Proof}
+Let us define the following mappings:
+\begin{align*}
+\sigma: (S \times T) \rightarrow (T \times S) \\
+(s,t) \longmapsto (t,s)
+\end{align*}
+and 
+\begin{align*}
+\mu: (T \times S) \rightarrow (S \times T) \\
+(t,s) \longmapsto (s,t)
+\end{align*}
+Observe first that, $ \sigma \circ \mu  = i_{(S \times T)} $, since $ (s,t)(\sigma \circ \mu) = ((s,t)\sigma)\mu = (t,s)\mu = (s,t) = (s,t)i_{(S \times T)} $, similarly for $ \mu \circ \sigma = i_{(T \times S)} $
+
+
+
+
+
 \end{document}
