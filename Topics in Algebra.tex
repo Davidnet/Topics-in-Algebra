@@ -155,5 +155,86 @@ We introduce the concept of a mapping of one set into another. Informally, a map
 Alternatively and for pedagogical reasons, we think of a mapping as a rule that associates any element $s \in S$ some element $ t \in T$. We shall say that $t$ is the image of $s$ under the mapping.
 \textbf{Notation Remarks} Let $ \sigma $ be a mapping from $S$ to $T$; we denote this by writing $\sigma : S \rightarrow T$ or $ S \xrightarrow{\sigma} T$, strangely enough, if $t$ is the image of $s$ under $\sigma$ we shall represent this fact by $ t = s\sigma $. Algebraists often write mappings on the right. 
 
+Given a mapping $ \tau: S \rightarrow T$ we define for $t \in T$, the inverse image of $t$ with respect to $ \tau$ to be the set $ \left\lbrace s \in S \vert t = s\tau \right\rbrace $
+
+\begin{define}
+	The mapping $ \tau $ of $S$ into $T$ is said to be \textbf{onto} $T$ if given $ t\in T$ there exits an element $ s \in S $ such that $ t = s\tau $
+\end{define}
+Observe that we call the subset $S\tau = \left\lbrace x \in T \vert x = s\tau \text{ for some  } s \in S \right\rbrace$ the \textbf{image} of $S$ under $ \tau $, then $ \tau $ is onto if the image of $S$ under $ \tau $ is all of $T$.
+
+\begin{define}
+	The mapping $ \tau $ of $S$ into $T$ is said to be a \textbf{one-to-one mapping} if whenever $ s_1 \neq s_2 $, then $ s_1\tau = s_2\tau$.
+\end{define}
+\textbf{Remark} Observe that the mapping $ \tau$ is one-to-one if for any $ t \in T$ the inverse image of $t$ is either empty or is a set consisting of one element.
+
+\begin{define}
+	The two mappings $ \sigma $ and $\tau$ of $S$ into $T$ are said to be \textbf{equal} if $s\sigma= s\tau $ for every $ s \in S$.
+\end{define}
+
+\begin{define}
+	If $\sigma: S \rightarrow T$ and $\tau: T \rightarrow U$ then the \textbf{composition} of $ \sigma $ and $\tau$ (also called their product) is the mapping $ \sigma \circ \tau: S \rightarrow U$ defined by means of $s( \sigma \circ \tau) = (s\sigma)\tau $ for every $ s \in S$
+\end{define}
+Remark that it is read from left to right; that is, $ \sigma \circ \tau$: first perform $ \sigma $ and then do $ \tau$. \par 
+
+For mappings of sets, provided the products make sense, the following holds:
+
+\begin{claim}[Associative Law] \label{pro:Associativelawmaps}
+	If $ \sigma: S \rightarrow T$, $\tau: T \rightarrow U$, and $ \mu: U \rightarrow V$, then $ (\sigma \circ \tau) \circ \mu = \sigma \circ ( \tau \circ \mu).$
+\end{claim}
+
+\begin{proof}
+	So, lt us see that the composition makes sense to be equal, observe that $ \sigma \circ \tau$ takes an element of $ s \in S $ to $ t \in T$ so that $ (\sigma \circ \tau) \circ \mu $ make sense and takes $ S $ into $V$. Similarly $ \tau \circ \mu$ takes $T$ into $V$ and $ \sigma \circ (\tau \circ \mu) $ takes also $S$ into $V$, so we are rest to check if both functions are equal.
+	So, we start with an element $s$ in $S$ and we want to see that $ s((\sigma \circ \tau) \circ \mu) = s(\sigma \circ (\tau \circ \mu))$. \par 
+	By definition of the composition of maps $s((\sigma \circ \tau) = (s(\sigma \circ \tau))\mu = ((s\sigma)\tau)\mu$, whereas $ s(\sigma \circ (\tau \circ \mu)) = (s \sigma)(\tau \circ \mu) = (((s \sigma)\tau)\mu $. Thus, we conclude $ (\sigma \circ \tau) \circ \mu = \sigma \circ ( \tau \circ \mu). $ 
+\end{proof}
+
+\begin{claim} \label{pro:propertystillcomposition}
+	Let $\sigma: S \rightarrow T$ and $ \tau: T \rightarrow U$; then
+	\begin{itemize}
+		\item $\sigma \circ \tau $ is \textbf{onto} if each of $\sigma$ and $\tau$ is onto.
+		\item $\sigma \circ \tau $ is \textbf{one-to-one} if each of $\sigma$ and $\tau$ is one-to-one. 
+	\end{itemize}
+\end{claim}
+\begin{proof} \par 
+	\begin{itemize}
+		\item Suppose $ \sigma $, and $ \tau$ both are onto functions, that is, $ S\sigma = T $, and $T\tau = U$, so we establish that $(S\sigma)\tau = U$, or equivalently, $ S (\sigma \circ \tau) = U$, and we have then $\sigma \circ \tau $  is onto.
+		\item Suppose that $s_1,s_2$ ar elements of $S$, and that $ s_1 \neq s_2$. By the one-to-one property of $ \sigma$, $s_1 \sigma \neq s_2 \sigma$. Since $ \tau $ is also one-to-one, and $ s_1 \sigma , s_2 \sigma $ are distinct elements of $T$, $ (s_1 \sigma)\tau \neq (s_2 \sigma)\tau $, therefore $ s_1(\sigma \circ \tau) = (s_1 \sigma) \tau \neq (s_2 \sigma)\tau = s_2(\sigma \circ \tau)$, and we establish the lemma.
+	\end{itemize}
+\end{proof}
+
+Now, let us suppose that $ \sigma $ is a one-to-one mapping of $S$ \emph{onto} $T$; we call $\sigma$ a \textbf{one-to-one correspondence}
+between $S$ and $T$. so observe that for any $t \in T$, there exist $ s \in S$ such that $t = s\sigma $; and by the property of one-to-one, this $s$ is unique. We define the mapping $ \sigma^{-1}: T \rightarrow S $ by $ s = t \sigma^{-1} $ if and only if $ t = s\sigma $. This map, is called the \textbf{inverse} of $ \sigma$. Observe $ \sigma \circ \sigma^{-1} $ maps $S$ to $S$, note that $ s(\sigma \circ \sigma^{-1}) = (s \sigma)\sigma^{-1} = t \sigma^{-1} = s $. so that $ \sigma \circ \sigma^{-1} $ is the identity operator on $S$, similarly $ \sigma^{-1} \circ \sigma $ is again the identity mapping of $T$.
+Conversely, if $\sigma: S \rightarrow T$  is such that there exist $ \mu: T \rightarrow S$ with the property that $ \sigma \circ \mu$ and $ \mu \circ \sigma$ are the identity mappings on $S$ and $T$ respectively, we claim that $\sigma$ is a one-to-one correspondence between $S$ and $T$. First, observe that $ \sigma$ is onto, this given by the fact that, let $t \in T$, so that = $t = t I_t = t(\mu \circ \sigma) = (t\mu)\sigma$, and we take note that $ t \mu \in S$ so that we shown that there exist $ s \in S$ such that $ t = s \sigma $ for any $t$ and we conclude, $ \sigma $ is onto. Second, suppose $ s_1 \sigma = s_2 \sigma $; take note that $ s_1 = s_1 I_s = s_1 (\sigma \circ \mu) = ( s_1 \sigma)\mu = (s_2 \sigma)\mu = s_2(\sigma \circ \mu) = s_2 I_s = s_2 $
+The preceding discussion proves then:
+\begin{claim} \label{pro:existenceofonetoonecorrespondence}
+	The mapping $ \sigma: S \rightarrow T $ is a \textbf{one-to-one correspondence} between $S$ and $T$ if and only if there exist a mapping $\mu: T \rightarrow S$ such that $ \sigma \circ \mu $ and $ \mu \circ \sigma $ are the identity mappings on $S$ and $T$ respectively.
+\end{claim}
+
+\begin{define}
+	If $S$ is a nonempty set then $A(S)$ is the \textbf{set of all one-to-one mappings} of $S$ onto itself.
+\end{define}
+$A(S)$ plays a universal type of role in groups.
+We state the following theorem as the recollection of th previous lemma and results:
+\begin{thm}
+	If $ \sigma, \tau, \mu $ are elements of $ A(S) $, then:
+	\begin{itemize}
+		\item $ \sigma \circ \tau $ is in $ A(S) $.
+		\item ($\sigma \circ \tau) \circ \mu = \sigma \circ (\tau \circ \mu)$.
+		\item There exist an element $i$ (the identity map) in $A(S)$ such that $ \sigma \circ i = i \circ \sigma = \sigma$.
+		\item There exist an element $ \sigma^{-1} \in A(S)$ such that $ \sigma \circ \sigma^{-1} = \sigma^{-1} \circ \sigma = i$.
+	\end{itemize}
+\end{thm}
+\begin{proof}
+	\begin{itemize}
+		\item Given by Proposition \ref{pro:propertystillcomposition}
+		\item Given by Proposition \ref{pro:Associativelawmaps}
+		\item Given by Proposition \ref{pro:existenceofonetoonecorrespondence}
+		\item Given by Proposition \ref{pro:existenceofonetoonecorrespondence}
+	\end{itemize}
+\end{proof}
+
+\begin{claim}
+	If $S$ has more than two elements we can find two elements $\sigma, \tau$ in $A(S)$ such that $ \sigma \circ \tau \neq \tau \circ \sigma$.
+\end{claim}
 	
 \end{document}
