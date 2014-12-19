@@ -1,4 +1,7 @@
 \documentclass[11pt,a4paper]{article}
+%\usepackage{lmodern}
+%\usepackage[T1]{fontenc}
+%\usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -258,8 +261,212 @@ and
 \end{align*}
 Observe first that, $ \sigma \circ \mu  = i_{(S \times T)} $, since $ (s,t)(\sigma \circ \mu) = ((s,t)\sigma)\mu = (t,s)\mu = (s,t) = (s,t)i_{(S \times T)} $, similarly for $ \mu \circ \sigma = i_{(T \times S)} $
 
+\textbf{4.a} If there is a one-to-one correspondence between $S$ and $T$, prove  that there exist a one/to/one correspondence between $T$ and $S$. \par
+\textbf{Proof}
+Suppose $\sigma: S \rightarrow T $ is a one-to-one correspondence between $S$ and $T$, so that, there exist a mapping $ \mu: T \rightarrow S$ for which:
+\begin{align*}
+\sigma \circ \mu = i_S \\
+\mu \circ \sigma = i_T
+\end{align*}
+Clearly, $ \mu $ is a one-to-one correspondence between $T$ and $S$. \par
 
+\textbf{4.b} If there is a one-to-one correspondence between $S$ and $T$ and between $T$ and $U$, prove that there is a one-to-one correspondence between $S$ and $U$ \par 
+\textbf{Proof}
+Suppose $ \sigma: S \rightarrow T $ is a one-to-one correspondence between $S$ and $T$, $ \mu: T \rightarrow U$ is a one-to-one correspondence between $T$ and $U$. Observe then, we have the following relations:
+\begin{align*}
+\sigma : S \rightarrow T \quad \quad \mu: T \rightarrow U \\
+\sigma^{-1}: T \rightarrow S \quad \quad \mu^{-1} U \rightarrow T
+\end{align*}
+We want to see that $ (\sigma \circ \mu)  $ is a one-to-one correspondence between $S$ and $U$.
 
+First, we want to see that $ (\sigma \circ \mu)  \circ ( \mu^{-1} \circ \sigma^{-1} ) = i_s $, observe that it can be establish by the following chains of equalities, let $s \in S$, $ s( (\sigma \circ \mu)  \circ ( \mu^{-1} \circ \sigma^{-1} ) ) = (s (\sigma \circ \mu))( \mu^{-1} \circ \sigma^{-1} )  = ( (s \sigma)\mu)( \mu^{-1} \circ \sigma^{-1} ) = (( (s \sigma)\mu)\mu^{-1}) \sigma^{-1} $.
+And by the associative law for composition of functions $  ((s \sigma)(\mu\mu^{-1}) \sigma^{-1}) = ((s \sigma)(i_t) \sigma^{-1}) = ((s \sigma)\sigma^{-1}) = si_s $, so we conclude then $ (\sigma \circ \mu)  \circ ( \mu^{-1} \circ \sigma^{-1} ) = i_s $. Similarly we take note that, $ (\mu^{-1} \circ \sigma^{-1} )  \circ ( \sigma \circ \mu  ) = i_u $. and we have shown that, $ (\sigma \circ \mu)  $ is a one-to-one correspondence between $S$ and $U$. \par 
 
+\textbf{6.} If $S$ is any set, prove that it is \emph{impossible} to find a mapping of $S$ onto $S^*$. \par 
+\textbf{Proof} 
+Recall that the definition of $ s^*$ is the set of subsets of $S$.
+
+Consider any set $S$ and any function $f$ from $S$ to $s^*$. We want to see that $f$ is not onto $S^*$. So observe that for that purpose we will find some subset $A$ of $S$ that is not in the range $f$.
+Let us consider the set:
+\begin{align*}
+A = { x \in S \vert x \not\in f(x)}
+\end{align*} 
+We remark then that $A$ makes sense, and that, when $x$ is in $S$, $f(x)$ will be a subset of $S$, and it might not contain $x$ itself.
+So we have shown that $A \subset S$. we want to see that $A$ is not in the range of $f$. Or equivalently, for each $x_0 \in S$, we have $ f(x_0) \neq A$. We see that for the construction of the set $A$.
+\begin{align*}
+x_0 \in A \leftrightarrow x_0 \not\in S 
+\end{align*}
+But this tell us that the two sets $A$ and $f(x_0)$ differ in at least one way, explicitly one of the two contains $x_0$ and the other does not. \par 
+\textbf{7.} If the set $S$ has $n$ elements, prove that $A(S)$ has $ n!$ elements. \par  
+\textbf{Proof.} Suppose $S$ is a finite set, take note that we can enumerate all the elements of $S$ as $ x_1, x_2,....,x_n$. Observe that if we want to construct a mapping $f$ that is a one-to-one correspondence between $S$ and itself, $f(x_1)$ can take up to $n$ values, $f(x_2)$ up to $n-1$ values, \ldots and so on. So by the principle of counting, we conclude then, there are $n!$ mappings that are a one-to-one correspondence between $S$ and itself. \par 
+\textbf{8.} If the set $S$ has a finite number of elements, prove the following: \par
+\textbf{a.} If $ \sigma$ maps $S$ onto $S$, then $\sigma$ is one-to-one \par
+\textbf{Proof.} Suppose $ \sigma : S \rightarrow S $ is onto $S$, observe that this condition is saying also that $S = \sigma S$ and the cardinality of $ S, \sigma S $ is $n$ since $S$  is a finite set. Suppose for the sake of contradiction that $ \sigma $ is onto, but is not a one-to-one mapping, i.e, there exist $s_1 \neq s_2$ elements of $S$ such that $ \sigma(s_1) = \sigma(s_2) $, now consider the set $ f(S) = \left\lbrace \sigma(s_1), \sigma(s_2), \ldots, \sigma(s_n) \right\rbrace $, observe that the cardinality of $\sigma(S)$ is $ n-1$, and this contradicts the fact that the cardinality of $ \sigma(S) $ is $n$.  \newline
+\textbf{b.} If $\sigma$ is a one-to-one mapping of $S$ onto itself, then $\sigma$ is onto.
+\textbf{Proof.} Suppose $ \sigma: S \rightarrow S$ is a one-to-one mapping onto $S$. Also, suppose for the sake of contradiction that there exist a $s_x \in S$ such that for all $s \in S$ it happens that $ s_s \neq s\sigma $. Since $S$ is a finite set, enumerate the elements of the set $ \left\lbrace p_1, p_2, p_3, \ldots, p_{n-1}, s_x \right\rbrace $, where $ p_i = s_i\sigma $ for $1 \leq i \leq n-1$, observe that every $p_i$ has a inverse image consisting of only element, observe that since $ \sigma $ is a one-to-one mapping, the set $ s_1, \ldots, s_{n-1} $ has $n-1$ elements, so now consider the element $\sigma s_n$, by the property of $ \sigma$, it is forced that $s_x = \sigma s_n$, but this contradict our assumption that $ s_x $ is not the image of any of the $s \in S$. \newline
+\textbf{8.c} Prove, by example, that both part (a) and part (b) are false if $S$ does not have a finite number of elements. \newline
+\textbf{Onto does not implies one-to-one} Let us consider the function $g: \mathbb{N} \rightarrow \mathbb{N} $, defined by:
+\begin{align*}
+	g(0) = 0 \\
+	g(x + 1) = x
+\end{align*}
+Observe then that $ N = g\mathbb{N} $ so that is an onto function, but $ g(0) = g(0 + 1) $ which implies is not a one-to-one function. \newline
+\textbf{One-to-One function does not implies onto} Consider the mapping $f: N \rightarrow N $, defined by $ f(n) = 2n $, observe then that $f$ is a one-to-one mapping but there are elements of $ \mathbb{N} $, specifically natural numbers of the form $2k +1 $, for which $2n = 2k + 1 $. \newline
+
+\textbf{10} Prove that there is a one-to-one correspondence between the set of integers and the set of rational numbers. \newline
+\textbf{Proof.}
+to be completed \par
+\textbf{13.} A set $S$ is said to be infinite if there is a one-to-one correspondence between $S$ and a proper subset of $S$. Prove \newline
+\textbf{(a)} The set of integers is infinite. \newline
+\textbf{Proof} To be added \newline
+\textbf{(b)} The set of real numbers is infinite. \newline
+\textbf{Proof} To be added \newline
+\textbf{(c)} If a set $S$ has a subset $A$ which is infinite, then $S$ must be infinite. \newline
+\textbf{Proof} To be added \newline
+\textbf{14} If $S$ is infinite and can be brought into one-to-one correspondence with the set of integers, prove that there is one-to-one correspondence between $S$ and $ S \times S$ \newline
+\textbf{Proof.}
+to be added \newline
+\subsection{The Integers}
+Given $a$ and $b$, with $ b \neq 0$, we can divide $a$ by $b$ to get a nonnegative remainder $r$ which is smaller in size than $b$; that is, we can find $m$ and $r$ such that $ a = mb + r$ where $ 0 \leq r < |b| $. This is commonly known as the Euclidean Algorithm.
+We say that $ b \neq 0 $ \emph{divides } a of $a = mb$ for some m. We denote this fact as $ a \vert b$ a divides b and $ a \nmid b$ if it does not. Observe that of $ a \mid 1$ then $a = \pm 1$, and also we have that if $ a \mid b $ and $ b \mid a$ we have $ a = \pm b $, and that any $b$ divides $0$.
+\begin{define}
+	The positive integer $c$ is said to ne the greatest common divisor of $a$ and $b$ if
+	\begin{itemize}
+		\item $c$ is a divisor of $a$ and of $b$
+		\item Any divisor of $a$ and $b$ is a divisor of $c$ 
+	\end{itemize}
+\end{define}
+We shall use the notation $(a,b)$ for the greatest common divisor of $a$ and $b$. Observe that since we are forcing that the greatest common divisor be positive, the following properties holds: $(a,b) = (-a,b), (a,-b), (-a,-b)$.
+\begin{claim}
+	if (a,b) exists then it is unique.
+\end{claim}
+\begin{proof}
+	Let $c_1$ and $c_2$ be such that the condition on the previous definition holds. Observe then that $ c_1 \mid c_2$ and $c_2 \mid c_1$ so that $ c_1 = \pm c_2$, and since we insist on the greatest common divisor to be positive, we have then $ c_1 = c_2 $ 
+\end{proof}
+\begin{claim}
+	If $a$ and $b$ are integers, not both $0$, then $(a,b)$ exist; moreover, we can find integers $m_0 and n_0$ such that $ (a,b) = m_0a + n_0b$
+\end{claim}
+\begin{proof}	
+	Let $M$ be the set defined by $M = \left\lbrace ma + nb \in \mathbb{Z} \vert m,n \in \mathbb{Z} \right\rbrace $, let us observe first that $ m \neq \emptyset $, since at least one of them is not zero, either $ 1\cdot a$ or $1 \cdot b$ is a nonzero integer in $M$. Now, let $x \in M$, i.e, $ x = ma +nb$, take note that $ -x = -ma + -nb$ is also in $M$, we conclude then that $M$ has some positive integers. With this observation at hand, we take the smallest positive integer, $c \in M$, and we claim that $ c = (a,b)$.Observe first, if $ d \mid a$ and $ d \mid b$, we have that $ d \mid m_0a + n_0b$ so that $ d \mid c$, and we have that $c$ complies with the first condition of the definition. Now, given $x = ma + nb \in M$, we have by the Euclidean algorithm, $ x = tc + r$, where $ 0 \leq r < c $, writing this explicitly, $ ma + nb = t(m_0a + n_0b) + r$, or equivalently, $ r = (m- tm_0)a + (n - tn_0)b$ and we see then, $r \in M$. Since $ 0 \leq r$ and $ r < c$, by the choice of minimality of $c$, we have then $ r = 0 $. Thus, $ x =tc$, and we have seen that for any $ x \in M$ $ c \mid x$ and since $ a = 1a + 0b \in M$ and $ b = 0a + 1b \in M$ we conclude $ c \mid a $ and $ c \mid b$, which is the last condition of the previous definition.
+\end{proof}
+Observe then that the previous proposition proves the existence of $(a,b)$, and at the same time that $c$ must be of a particular form.
+\begin{define}
+	The integers $a$ and $b$ are \textbf{relatively prime} if $(a,b) = 1$
+\end{define}
+As an immediate consequence of previous proposition, we have
+\begin{claim}
+	If $a$ and $b$ are relatively prime, we can find integers $m$ and $n$ such that $ma + nb = 1$
+\end{claim}
+\begin{proof}
+	Since $(a,b) = 1$, replace $c$ with $1$ in the previous proposition
+\end{proof}
+For the proceeding discussion we choose not to let $1$ to be a prime number. By this we shall mean an integer which has no nontrivial factorization.
+\begin{define}
+	The integer $ p > 1$ is a \textbf{prime number} if its only divisors are $ \pm 1 $, and $ \pm p$
+\end{define} 
+Observe that this characterization is identically to say that, an integer $p$ (larger than $1$) is a prime number if and only if given any other integer $n$ then either $(p,n) = 1$ or $ p \mid n$.
+\begin{claim}
+	If $a$ is relatively prime to $b$ but $ a \mid bc$, then $a\mid c$
+\end{claim} 
+\begin{proof}
+	Suppose $a \mid bc$, and $a$ is relatively prime to $b$, i.e, $(a,b) = 1 $, by Bezout's identity we have then, that there exits $m,n \in \mathbb{Z} $ such that $ 1 = ma + nb$, observe then $ c = cma + cnb $, and take note that $ a \mid cma $ and $ a \mid cnb $, so that $ a \mid cma + cnb $, and finally since $ cma + cnb = c$ we have then $ a \mid c$.
+\end{proof}
+\begin{claim}
+	If a prime number divides the product of certain integers it must divide at least one of these integers.
+\end{claim}
+\begin{proof}
+	The following proof will be done via induction. \newline
+	\textbf{Base case} Suppose $p$ is a prime and $p \mid a_1a_2 $, and suppose without loss of generalization $p \not\mid a_1$, we then must show that $ p \mid a_2$. Take note $(p,a_1) \mid p$, and $p$ is prime, so $(p,a_1) = 1$ or $(p,a_1) = p$. Observe that for the first case, the previous proposition give us the desired result. If $(p,a_1) = p$, observe then $p \mid a_1$ but that contradicts our assumption. This establish the result for $n = 2$. \newline
+	\textbf{Induction case} Assume $n > 2$ and presume the result is true when $p$ divides a product with less than $n$ factors. Suppose that $ p \mid a_1 a_2 a_3 \ldots a_n$. Grouping the terms, we have:
+	\begin{align*}
+	p \mid (a_1 \ldots a_{n-1}) a_n
+	\end{align*} 
+	Given by the base case, either $ p \mid a_1 \ldots a_{n-1} $ or $ p \mid a_n$. Observe then, if $ p \mid a_n$ we are done. Otherwise, if $ p \mid a_1 \ldots a_{n-1} $, then $p$ divides one of the $ a_1, \ldots, a_n{n-1} $ by the hypothesis of induction. In any case, we have just shown that $p$ divides one of the $a_i$ so that gives us the desired result.
+\end{proof}
+Now, here comes the big theorem of this section:
+\begin{thm}
+	Any positive integer $ a > 1$ can be factored in a unique way as $ a = p_1^{\alpha_1}p_2^{\alpha_2} \dots p_t^{\alpha_t}$, where $p_1 > p_2 > p_3 > \ldots > p_t $ are prime numbers and where each $ \alpha_i > 0 $
+\end{thm}
+\begin{proof}
+	Let's observe that the theorem has two important results in the back. First, the theorem is telling us that given a positive integer we can factor this integer as a product of primes. Secondly, that this factorization is unique. Let us then prove the two assertions. \newline
+	Remark, the following proof will use induction, more specifically, we will use the assertion that if given a proposition $P$ and if the proposition $P(m_0)$ is true and if the truth of $P(r)$ for all $r$ such that $ m_0 \leq r < k$ implies the truth of $P(k)$, then $P(n)$ is true for all $ n \geq m_0$. \newline
+	First, we will prove that every integer $ a > 1$ can be factored as a product of prime powers. \newline
+	\textbf{Base case} Certainly, for $m_0 = 2 $, being a prime number, it can be factored as a product of prime numbers. \newline
+	\textbf{Induction case} Suppose that for any integer $r$, $ 2 \leq r < k$ can be factored as a product of primes. If $k$ itself is a prime number, then it is a product of prime powers. Suppose now, that $k$ is not a prime number, then $k = uv$, for which $ 1 < u < k$  and $ 1 < v < k$. By the induction hypothesis, since both $u$ and $v$ are less than $k$, they can be factored as a product of prime powers. Thus $ k = uv$ is such product. By the Principle of mathematical induction, we have just shown that any integer $a \geq 2$ can be factored as a product of prime powers. \newline
+	Finally, we prove uniqueness. Suppose that:
+	\begin{align*}
+	a = p_1^{\alpha_1} p_2^{\alpha_2} \ldots p_r^{\alpha_r} = q_1^{\beta_1} q_2^{\beta_2} \ldots q_s^{\beta_s} 
+	\end{align*} 
+	where $p_1 > p_2 > \ldots > p_r$, $q_1> \ldots > q_s$ are prime numbers, and where each $ \alpha_i > 0 $ and each $ \beta_i > 0 $ Our objective is to prove:
+	\begin{itemize}
+		\item $r =s$
+		\item $ p_1 = q_1, p_2 = q_2, \ldots p_r = q_r $
+		\item $ \alpha _1 = \beta_1, \ldots, \alpha_r = \beta_r$
+	\end{itemize}
+	For $a = 2$ this is trivially true. Proceeding by induction we suppose that the assertion is true for all integers $u$, whence $ 2 \leq u < a$. Now, since:
+	\begin{equation*}
+	a = p_1^{\alpha_1} p_2^{\alpha_2} \ldots p_r^{\alpha_r} = q_1^{\beta_1} q_2^{\beta_2} \ldots q_s^{\beta_s} 
+	\end{equation*}
+	and since $ a_i > 0 $, $ p_1 \mid a$, hence $ p_1 \mid q_1^{\beta_1} q_2^{\beta_2} \ldots q_s^{\beta_s} $. Take note that $p_1$ is a prime number and by the preceding Proposition we have $p_1 = q_i$ for some $i$. Thus, we have then $q_1 \geq q_i = p_1 $. In the same fashion, since $ q_1 \mid a$ we get $q_1 = p_j$ for some $j$, whence $ p_1 \geq p_j = q_1$. Which combined give us the desired conclusion that $ q_1 = p_1$. We have then:
+	\begin{align*}
+	 a = p_1^{\alpha_1} p_2^{\alpha_2} \ldots p_r^{\alpha_r} = p_1^{\beta_1} q_2^{\beta_2} \ldots q_s^{\beta_s} 
+	\end{align*}
+	But observe then, that if $\alpha_1 > \beta_1 $, we have then:
+	\begin{align*}
+	a = p_1^{\alpha_1 - \beta_1} p_2^{\alpha_2} \ldots p_r^{\alpha_r} = q_2^{\beta_2} \ldots q_s^{\beta_s} 
+	\end{align*}
+	But then, $p_1$ divides the right hand side, but not the left hand side, which is a contradiction. Similarly for $ \beta_1 > \alpha_1$, and we conclude then $ \alpha_1 = \beta_1$.
+	Now let us define:
+	\begin{align*}
+	b = \dfrac{a}{p^{\alpha_1}} =
+	 p_2^{\alpha_2} \ldots p_r^{\alpha_r} =  q_2^{\beta_2} \ldots q_s^{\beta_s}  
+	\end{align*}
+	If $b = 1$, then $a_2 = 0 \ldots = \alpha_r = 0$ and $ \beta_2 = \ldots = \beta_s = 0$; that is, $r =s =1$, and we are done. If $b > 1$, then since $b <a$ we can apply our induction hypothesis to $b$ to get:
+	\begin{itemize}
+		\item The number of distinct prime power (in $b$) on both sides is equal, i.e, $r -1 = s -1$, which implies $ r =s $
+		\item $\alpha_2 = \beta_2, \ldots , \alpha_r = \beta_r $.
+		\item $p_2 = q_2, \ldots p_r = q_r$ 
+	\end{itemize}
+	Together and with the fact that $ p_1 = q_1$ and $ \alpha_1 = \beta_1$, we have then shown that the assumption that the factorization of integers less than $a$ implies the factorization of $a$, which by Principle of mathematical induction, makes the proposition holds for all integers $ a > 2$.
+\end{proof}
+\begin{define}
+	Let $n > 0 $ be a fixed integer. We define $ a \equiv b \mod{n}$ if $n \mid (a-b)$
+\end{define}
+The congruence relation enjoy the following properties
+\begin{claim}
+	The relation \emph{congruence modulo $n$} defines an equivalence relation on the set of integers.
+\end{claim}
+\begin{proof}
+	We first verify the condition of symmetric. We take note that since $n \mid 0$, we have then $ n \mid (a-a)$ so that $ a \equiv a \mod{n}$ for every $a$. Second, we observe then the if $ a \equiv b \mod{n} $ we have $ n \mid (a-b) $, and $ n \mid -(b-a) $ so that $ b \equiv a \mod{n} $. Finally  suppose $ a \equiv b \mod{n} $ and $ b \equiv c \mod{n} $ so that $ n \mid (a-b) $ and $ n \mid (b+c) $ whence $ n \mid \left\lbrace (a -b) + (b -c) \right\rbrace $, equivalently, $ n \mid (a - c) $, which implies $ a \equiv c \mod{n} $
+\end{proof}
+\begin{claim}
+	The relation congruence modulo $n$ has $n$ distinct equivalence classes.
+\end{claim}
+\begin{proof}
+	Let us denote the equivalence class of this relation via $[a]$, more briefly the \emph{congruence class} of $a$. Given any integer $a$, by the Euclidean algorithm, $a = kn + r$ where $ 0 \leq r < n$. But observe $ a -r = kn$ so that $ r \in [a] $, so there are at most $n$ congruence classes, however these classes are distinct, for if $[i] = [j]$, with $ 0 \leq i < j < n$, it would mean, $ n \mid (j-i) $. where $j-i$ is a positive integer less than $n$, so that is impossible (see that $4 \not\mid 2$). As a consequence there are exactly $n$ distinct congruence classes, $[0],[1], \ldots, [n-1]$ 
+\end{proof}
+\begin{claim}
+	If $ a \equiv b \mod{n} $ and $ c \equiv d \mod{n}$, then $ a + c \equiv b + d \mod{n} $ and $ac \equiv bd \mod{n}$.
+\end{claim}
+\begin{proof}
+	Suppose $a \equiv b \mod{n} $ and $ c \equiv d \mod{n} $; therefore, $ n \mid (a-b) $ and $ n \mid (c-d) $ whence  $ n \mid  \left\lbrace (a-d) + (c-d) \right\rbrace $ or equivalently	$ n \mid  \left\lbrace (a+c) - (b+d) \right\rbrace$ so that $ a + c \equiv b+d \mod{n} $. Take note that also we have, $ n \mid \left\lbrace (a-b)c - (c-d)d \right\rbrace = ac - bd$ so that $ ac \equiv bd \mod{n}$.
+\end{proof}
+\begin{claim}
+	If $ab \equiv ac \mod{n} $ and $a$ is relatively prime to $n$, then $ b \equiv c \mod{n} $
+\end{claim}
+\begin{proof}
+	Suppose that $ ab \equiv ac \mod{n}  $, or in other words, $ n \mid a (b-c)$, and since $(a,n) = 1$ by a preceding lemma above, we have then $ n \mid b -c $ or more explicitly, $ b \equiv c \mod{n}$ 
+\end{proof}
+Now, let us define $J_n$ to be the set of the congruences classes $ \mod{n}$; i.e, $ J_n = \left\lbrace [0],[1], \ldots, [n-1] \right\rbrace $. Let us over this set define two operations, so that given two elements, $[i]$ and $[j]$ in $ J_n$ we have:
+\begin{align*}
+[i] + [j] = [i+j] \\
+[i][j] = [ij]
+\end{align*}
+\begin{claim}
+	The previous definitions of "addition" and "multiplication" in $J_n$ are well defined.
+\end{claim}
+\begin{proof}
+	Suppose $[i] = [i'] $ and $[j] = [j'] $ are elements of $J_n$. That is $ i \equiv $
+\end{proof}
 
 \end{document}
